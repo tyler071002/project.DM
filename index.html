@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI 대화 사이트</title>
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background-color: #f0f0f0;
+        }
+
+        #wrap {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 90vh;
+            width: 720px;
+            flex-direction: column;
+        }
+
+        footer {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .chat-input {
+            display: flex;
+            position: fixed;
+            width: 720px; /* 입력창과 버튼의 너비를 일치시킴 */
+        }
+
+        #message-input {
+            flex: 1;
+            padding: 10px; /* 패딩을 0으로 설정하여 여백을 없앰 */
+            border: 1px solid #e0e0e0; /* 경계선 추가 */
+            font-size: 16px;
+            border-radius: 8px 0 0 8px;
+            resize: none;
+            overflow: hidden; /* 스크롤바 숨기기 */
+            min-height: 40px; /* 최소 높이 설정 */
+            max-height: 150px; /* 최대 높이 설정 */
+            line-height: 1; /* 줄 간격을 1로 설정하여 여백 최소화 */
+            box-sizing: border-box; /* 패딩과 보더를 포함하여 전체 높이 계산 */
+        }
+
+        #send-button {
+            background-color: #2e2e2e;
+            color: #fff;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 0 8px 8px 0;
+        }
+
+        #send-button:hover {
+            background-color: #3f3f3f;
+        }
+
+        #message-input:focus {
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <h1>테스트</h1>
+        <h3>Hello World</h3>
+    </div>
+    <footer>
+        <div class="chat-input">
+            <textarea id="message-input" rows="1" cols="40" placeholder="메시지를 입력해주세요" aria-label="메시지 입력"></textarea>
+            <button id="send-button" aria-label="메시지 전송">전송</button>
+        </div>
+    </footer>
+
+    <script>
+        const messageInput = document.getElementById("message-input");
+        const sendButton = document.getElementById("send-button");
+
+        messageInput.addEventListener('input', () => {
+            messageInput.style.height = 'auto';
+            messageInput.style.height = messageInput.scrollHeight + 'px';
+        });
+
+        sendButton.addEventListener('click', () => {
+            const message = messageInput.value;
+            if (message) {
+                console.log("전송된 메시지:", message); // 여기에서 실제 전송 기능 구현
+                messageInput.value = ''; // 메시지 입력창 초기화
+                messageInput.style.height = 'auto'; // 높이 초기화
+            }
+        });
+    </script>
+</body>
+</html>
