@@ -1,0 +1,60 @@
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #f0f0f0;
+}
+
+#wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+    width: 720px;
+    flex-direction: column;
+}
+
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.chat-input {
+    display: flex;
+    position: fixed;
+    width: 720px; /* 입력창과 버튼의 너비를 일치시킴 */
+}
+
+#message-input {
+    flex: 1;
+    padding: 10px; /* 패딩을 0으로 설정하여 여백을 없앰 */
+    border: 1px solid #e0e0e0; /* 경계선 추가 */
+    font-size: 16px;
+    border-radius: 8px 0 0 8px;
+    resize: none;
+    overflow: hidden; /* 스크롤바 숨기기 */
+    min-height: 40px; /* 최소 높이 설정 */
+    max-height: 150px; /* 최대 높이 설정 */
+    line-height: 1; /* 줄 간격을 1로 설정하여 여백 최소화 */
+    box-sizing: border-box; /* 패딩과 보더를 포함하여 전체 높이 계산 */
+}
+
+#send-button {
+    background-color: #2e2e2e;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 0 8px 8px 0;
+}
+
+#send-button:hover {
+    background-color: #3f3f3f;
+}
+
+#message-input:focus {
+    outline: none;
+}
